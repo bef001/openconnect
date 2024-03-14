@@ -57,4 +57,4 @@ read username
 
 sudo ocpasswd -c /etc/ocserv/ocpasswd $username
 
-echo "your vpn is configed successfully!!!"
+echo "your vpn is configured successfully!!!"
