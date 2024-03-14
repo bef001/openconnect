@@ -12,6 +12,7 @@ systemctl disable firewalld
 systemctl stop firewalld
 
 
+echo kiram dahane soroush
 # sudo yum update
 sudo yum install epel-release
 sudo yum install ufw
