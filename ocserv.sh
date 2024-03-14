@@ -28,12 +28,12 @@ sudo yum install certbot
 sudo certbot certonly --standalone --preferred-challenges http --agree-tos --email $emailAddress -d $domain
 
 
-sudo cd /etc/ocserv/
-sudo rm ocserv.conf
+sudo rm /etc/ocserv/ocserv.conf
 sudo wget https://raw.githubusercontent.com/bef001/openconnect/main/ocserv.conf
 sudo sed -i "126s/your-domain/${domain}/" ocserv.conf
 sudo sed -i "127s/your-domain/${domain}/" ocserv.conf
 sudo sed -i "467s/your-domain/${domain}/" ocserv.conf
+sudo mv ocserv.conf /etc/ocserv/
 
 sudo systemctl restart ocserv
 
@@ -43,10 +43,10 @@ sudo echo "net.ipv4.tcp_congestion_control=bbr" | sudo tee -a /etc/sysctl.d/60-c
 sudo sysctl -p /etc/sysctl.d/60-custom.conf
 
 
-sudo cd /etc/ufw/
-sudo rm before.rules
+sudo rm /etc/ufw/before.rules
 sudo wget https://raw.githubusercontent.com/bef001/openconnect/main/before.rules
 sudo sed -i "78s/eth0/${interface}/" before.rules 
+sudo mv before.rules /etc/ufw/
 
 
 sudo ufw enable
