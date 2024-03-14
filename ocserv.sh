@@ -12,7 +12,7 @@ systemctl disable firewalld
 systemctl stop firewalld
 
 
-sudo yum update
+# sudo yum update
 sudo yum install epel-release
 sudo yum install ufw
 sudo yum install ocserv
