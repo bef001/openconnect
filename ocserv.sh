@@ -30,9 +30,9 @@ sudo certbot certonly --standalone --preferred-challenges http --agree-tos --ema
 
 sudo rm /etc/ocserv/ocserv.conf
 sudo wget https://raw.githubusercontent.com/bef001/openconnect/main/ocserv.conf
-sudo sed -i "126s/your-domain/${domain}/" ocserv.conf
-sudo sed -i "127s/your-domain/${domain}/" ocserv.conf
-sudo sed -i "467s/your-domain/${domain}/" ocserv.conf
+sudo sed -i "126s/your-domain/${domain}/" ./ocserv.conf
+sudo sed -i "127s/your-domain/${domain}/" ./ocserv.conf
+sudo sed -i "467s/your-domain/${domain}/" ./ocserv.conf
 sudo mv ocserv.conf /etc/ocserv/
 
 sudo systemctl restart ocserv
@@ -45,7 +45,7 @@ sudo sysctl -p /etc/sysctl.d/60-custom.conf
 
 sudo rm /etc/ufw/before.rules
 sudo wget https://raw.githubusercontent.com/bef001/openconnect/main/before.rules
-sudo sed -i "78s/eth0/${interface}/" before.rules 
+sudo sed -i "78s/eth0/${interface}/" ./before.rules 
 sudo mv before.rules /etc/ufw/
 
 
