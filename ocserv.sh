@@ -51,3 +51,10 @@ sudo mv before.rules /etc/ufw/
 
 sudo ufw enable
 sudo systemctl restart ufw
+
+echo -e enter a username : 
+read username
+
+sudo ocpasswd -c /etc/ocserv/ocpasswd $username
+
+echo "your vpn is configed successfully!!!"
