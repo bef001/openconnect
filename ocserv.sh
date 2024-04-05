@@ -12,17 +12,17 @@ systemctl disable firewalld
 systemctl stop firewalld
 
 
-yum install epel-release
-yum install ufw
-yum install ocserv
+yum install epel-release -y
+yum install ufw -y
+yum install ocserv -y
 
 systemctl start ocserv
 systemctl enable ufw
-systemctl start ufw
+systemctl start ufw -y
 
 ufw allow 80,443,22/tcp
 
-yum install certbot
+yum install certbot -y
 certbot certonly --standalone --preferred-challenges http --agree-tos --email $emailAddress -d $domain
 rm /etc/ocserv/ocserv.conf
 
